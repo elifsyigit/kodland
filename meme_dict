@@ -1,0 +1,35 @@
+meme_dict = {
+    "CRINGE": "Garip ya da utandırıcı bir şey",
+    "LOL": "Komik bir şeye verilen cevap",
+    "SHEESH": "Onaylamamak veya hayret belirtmek için kullanılan bir ifade",
+    "CREEPY": "Korkunç, ürkütücü",
+    "AGGRO": "Agresifleşmek/sinirlenmek",
+    "SLAY": "Bir şeyi mükemmel bir şekilde yapmak",
+    "GOAT": "Tüm zamanların en iyisi (Greatest of All Time)",
+    "LIT": "Harika, eğlenceli veya heyecan verici",
+    "SUS": "Şüpheli, güvenilir olmayan",
+    "VIBE": "Bir şeyin atmosferi veya hissiyatı",
+    "GG" : "Good game",
+}
+
+# Kullanıcıdan kelime girişi alma
+word = input("Anlamadığınız bir kelime yazın (hepsini büyük harflerle yazın!): ")
+
+# Kelime sözlükte var mı kontrol et
+if word in meme_dict:
+    print("Bu kelimenin anlamı:", meme_dict[word])
+else:
+    print("Sözlükte bulunamadı..")
+
+    # Kullanıcıdan kelime ekleme isteği
+    add_word = input("Sözlüğe yeni bir kelime eklemek ister misiniz? (Evet/Hayır): ").strip().lower()
+    if add_word == 'evet':
+        new_word = input("Eklemek istediğiniz kelimeyi girin (Büyük harflerle): ")
+        new_meaning = input("Kelimenin anlamını girin: ")
+        if new_word and new_meaning:      ##bir değer varsa boolean değer true olur
+            meme_dict[new_word] = new_meaning
+            print(f"{new_word} kelimesi başarıyla eklendi!")
+        else:
+            print("Kelime veya anlam boş olamaz.")
+    else:
+        print("Tamam, başka bir şey sormak istersen buradayım!")
